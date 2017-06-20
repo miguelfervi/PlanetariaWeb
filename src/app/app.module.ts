@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { ExploradoresService } from './services/exploradores.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -12,6 +14,8 @@ import { PlanetaComponent } from './components/planeta/planeta.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import {APP_ROUTING} from './app-routes';
+import { ExploradorComponent } from './components/exploradores/explorador.component';
+
 
 @NgModule({
   declarations: [
@@ -23,15 +27,19 @@ import {APP_ROUTING} from './app-routes';
     EscaramuzaComponent,
     PlanetaComponent,
     NavbarComponent,
+    ExploradorComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    ExploradoresService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

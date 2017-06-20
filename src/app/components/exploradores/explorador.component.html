@@ -1,0 +1,77 @@
+<h3 class="margin-container">Explorador <small>nombre...</small></h3>
+<hr>
+
+
+<hr>
+
+<h4>Formularios <small>data</small></h4>
+<hr>
+<form (ngSubmit)="guardar()" #forma="ngForm">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+
+        <input [(ngModel)]="explorador.nombre"
+              class="form-control"
+              name="nombre"
+              type="text"
+              placeholder="Nombre"
+              required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+
+        <input
+              [(ngModel)]="explorador.apellido"
+              class="form-control"
+               type="text"
+               name="apellido"
+               placeholder="Apellido"
+               required>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-md-8">
+
+      <input
+            [(ngModel)]="explorador.correo"
+            class="form-control"
+            name="correo"
+             type="email"
+             placeholder="Correo electrónico"
+             required>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="input-group col-md-8">
+      <button
+      [disabled]="!forma.valid"
+      type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+
+      <button
+
+        [routerLink]="['heroes']"
+        class="btn btn-outline-danger margin-button">
+        Regresar
+
+      </button>
+    </div>
+  </div>
+
+
+</form>
