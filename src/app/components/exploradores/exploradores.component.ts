@@ -9,13 +9,14 @@ import {ExploradoresService } from "../../services/exploradores.service";
 export class ExploradoresComponent implements OnInit {
 
   exploradores:any[] = [];
+  loading:boolean = true;
 
   constructor(private _exploradoresService:ExploradoresService) {
 
     this._exploradoresService.getExploradores()
     .subscribe(data =>{
-      console.log(data);
       this.exploradores = data;
+      this.loading = false;
 
     })
    }

@@ -56,6 +56,17 @@
   </tbody>
 </table>
 
+<div *ngIf="(exploradores | keys).length === 0 && !loading"
+  class="alert alert-info" role="">
+  <strong>No hay</strong> registros que mostrar.
+</div>
+
+<div *ngIf="loading"
+    class="alert alert-warning" role="alert">
+  <strong>Cargando...</strong> por favor espere.
+
+</div>
+
 </div>
 
 </div>
