@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import {APP_ROUTING} from './app-routes';
 import { ExploradorComponent } from './components/exploradores/explorador.component';
+import { KeysPipe } from './pipes/keys.pipe';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ExploradorComponent } from './components/exploradores/explorador.compon
     PlanetaComponent,
     NavbarComponent,
     ExploradorComponent,
+    KeysPipe,
 
   ],
   imports: [

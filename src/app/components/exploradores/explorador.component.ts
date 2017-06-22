@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import {Router} from "@angular/router";
-import {Explorador} from "../../interfaces/explorador.interface";
+import { Router,ActivatedRoute } from "@angular/router";
+import { Explorador } from "../../interfaces/explorador.interface";
 import { ExploradoresService }from "../../services/exploradores.service";
+
 
 @Component({
   selector: 'app-explorador',
@@ -11,15 +12,31 @@ import { ExploradoresService }from "../../services/exploradores.service";
 })
 export class ExploradorComponent implements OnInit {
 
-  explorador:Explorador = {
+  private explorador:Explorador = {
     nombre:"",
     apellido:"",
     correo:""
 
   }
 
+  nuevo:boolean = false;
+  id:string;
+
   constructor(private _exploradoresService:ExploradoresService,
-              private router:Router) { }
+              private router:Router,
+              private route:ActivatedRoute) {
+
+                this.route.params
+                    .subscribe( parametros =>{
+
+                      this.id = parametros['id'];
+                      if(this.id !="nuevo"){
+                        this._exploradoresService.getExplorador(this.id)
+                            .subscribe(explorador => this.explorador = explorador)
+                      }
+
+                    });
+              }
 
   ngOnInit() {
   }
@@ -28,13 +45,34 @@ export class ExploradorComponent implements OnInit {
 
     console.log(this.explorador);
 
-    this._exploradoresService.nuevoExplorador( this.explorador )
-        .subscribe( data=>{
-          this.router.navigate(['/explorador',data.name])
+    if(this.id == "nuevo"){
 
-        },
-        error=>console.error(error)
-      );
+      this._exploradoresService.nuevoExplorador( this.explorador )
+          .subscribe( data=>{
+            this.router.navigate(['/explorador',data.name])
+
+          },
+          error=>console.error(error)
+        );
+    }else{
+      this._exploradoresService.actualizarExplorador( this.explorador,this.id )
+          .subscribe( data=>{
+            console.log(data)
+
+          },
+          error=>console.error(error)
+        );
+
+  }
+}
+
+  agregarNuevo(form:NgForm){
+
+    this.router.navigate(['explorador','nuevo']);
+
+    form.reset({
+      
+    });
   }
 
 }

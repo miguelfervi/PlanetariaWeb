@@ -17,6 +17,10 @@
 
 }
 
+.wd120{
+  width: 230px;
+}
+
 .fast {
   -webkit-animation-duration: 0.3s;
   animation-duration :0.3s;
