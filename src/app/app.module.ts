@@ -3,11 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {AuthGuardService} from "./services/auth-guard.service";
+
+import { AuthService } from './services/auth.service';
+
 import { ExploradoresService } from './services/exploradores.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
+
 import { ExploradoresComponent } from './components/exploradores/exploradores.component';
 import { EscaramuzaComponent } from './components/escaramuza/escaramuza.component';
 import { PlanetaComponent } from './components/planeta/planeta.component';
@@ -23,7 +30,6 @@ import { KeysPipe } from './pipes/keys.pipe';
     AppComponent,
     HomeComponent,
     HomeComponent,
-    PerfilComponent,
     ExploradoresComponent,
     EscaramuzaComponent,
     PlanetaComponent,
@@ -37,10 +43,15 @@ import { KeysPipe } from './pipes/keys.pipe';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+
     APP_ROUTING
   ],
   providers: [
-    ExploradoresService
+    ExploradoresService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

@@ -8,29 +8,51 @@
   </button>
   <div class="collapse navbar-collapse " id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="authService.user | async">
         <a class="nav-link" [routerLink]="['home']">Inicio</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['perfil']">Perfil</a>
+        <a class="nav-link" [routerLink]="['planeta']" *ngIf="authService.user | async">Planeta</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['planeta']">Planeta</a>
+        <a class="nav-link" [routerLink]="['exploradores']" *ngIf="authService.user | async">Exploradores</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['exploradores']">Exploradores</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="authService.user | async">
         <a class="nav-link" [routerLink]="['escaramuza']">Escaramuza</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="authService.user | async">
         <a class="nav-link" [routerLink]="['escaramuza']">Emblemas</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['escaramuza']">Recompensa</a>
+        <a class="nav-link text-right" *ngIf="authService.user | async">Bienvenido {{ (authService.user | async)?.email }}!</a>
+
       </li>
 
     </ul>
-    <button type="button" class="btn btn-success">Login</button>
+
+    <div>
+      <div class="input-group text-center" *ngIf="!(authService.user | async)">
+          <span class="input-group-addon" id="sizing-addon1">@</span>
+          <input  type="string" [(ngModel)]="email" placeholder="correo">
+          <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <input type="password" [(ngModel)]="password" placeholder="contraseña">
+          <button (click)="signup()" [disabled]="!email || !password" class="btn btn-info">
+            Signup
+          </button>
+
+          <button (click)="login()" [disabled]="!email || !password" class="btn btn-success">
+            Login
+          </button>
+      </div>
+
+
+
+    </div>
+
+    <button (click)="logout()" *ngIf="authService.user | async " class="btn btn-danger">
+      Logout
+    </button>
+
+
   </div>
 </nav>
