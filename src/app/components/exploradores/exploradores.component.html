@@ -1,8 +1,6 @@
-<h1 class="margin-container">Exploradores</h1>
-<hr>
 
 
-<div class="row">
+<div class="row margin-container">
   <div class="col-md-12 text-left">
     <button
       [routerLink]="['/explorador','nuevo']"
@@ -15,7 +13,7 @@
   </div>
 
 </div>
-<br>
+<hr>
 
 
 <div class="row animated fadeIn fast">
@@ -28,6 +26,7 @@
   <thead class="thead-inverse">
     <tr>
       <th>#</th>
+      <th>DNI</th>
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Correo</th>
@@ -37,6 +36,7 @@
   <tbody>
     <tr *ngFor="let k of exploradores | keys; let i = index">
       <td >{{ i + 1}}</td>
+      <td >{{ exploradores[k].dni}}</td>
       <td> {{ exploradores[k].nombre }}</td>
       <td>{{ exploradores[k].apellido }}</td>
       <td>{{ exploradores[k].correo }}</td>

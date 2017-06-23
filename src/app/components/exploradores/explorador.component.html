@@ -1,9 +1,26 @@
 <h3 class="margin-container">Explorador <small>{{explorador.nombre}}</small></h3>
 <hr>
-
+<button (click)="agregarNuevo(forma)"
+    type="button" class="btn btn-outline-success">
+    Nuevo Explorador
+</button>
+<hr>
 <form (ngSubmit)="guardar()" #forma="ngForm">
 
   <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">DNI</label>
+      <div class="col-8">
+
+        <input [(ngModel)]="explorador.dni"
+              class="form-control"
+              name="dni"
+              type="text"
+              placeholder="DNI"
+              required>
+      </div>
+    </div>
 
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
@@ -48,8 +65,20 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Asignatura</label>
+    <div class="col-8">
 
+      <input [(ngModel)]="explorador.asignatura"
+            class="form-control"
+            name="asignatura"
+            type="text"
+            placeholder="Asignatura"
+            required>
+    </div>
+  </div>
 
+<hr>
   <div class="form-group row">
     <div class="input-group col-md-8">
       <button
@@ -66,10 +95,7 @@
 
       </button>
 
-      <button (click)="agregarNuevo(forma)"
-          type="button" class="btn btn-outline-success margin-button">
-          Nuevo Explorador
-      </button>
+
     </div>
   </div>
 

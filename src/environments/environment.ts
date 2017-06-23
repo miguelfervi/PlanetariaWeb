@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
    firebase: {
-    apiKey: "AIzaSyDgn04xAZl4um1eNoVLygctVoQ2PcmFG5g",
+    apiKey: "AIzaSyDDSoALZaQcRE5Hf80HA9Mk0WXRks3p7Xk",
     authDomain: "planetaria-4a540.firebaseapp.com",
     databaseURL: "https://planetaria-4a540.firebaseio.com",
     projectId: "planetaria-4a540",

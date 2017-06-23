@@ -23,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {APP_ROUTING} from './app-routes';
 import { ExploradorComponent } from './components/exploradores/explorador.component';
 import { KeysPipe } from './pipes/keys.pipe';
+import { EmblemasComponent } from './components/emblemas/emblemas.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { KeysPipe } from './pipes/keys.pipe';
     NavbarComponent,
     ExploradorComponent,
     KeysPipe,
+    EmblemasComponent,
 
   ],
   imports: [

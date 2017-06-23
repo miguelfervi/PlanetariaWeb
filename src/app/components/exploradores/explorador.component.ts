@@ -13,9 +13,13 @@ import { ExploradoresService }from "../../services/exploradores.service";
 export class ExploradorComponent implements OnInit {
 
   private explorador:Explorador = {
+    dni:"",
     nombre:"",
     apellido:"",
-    correo:""
+    correo:"",
+    asignatura:"",
+    vidas:0,
+    recompensas:0,
 
   }
 
@@ -71,7 +75,9 @@ export class ExploradorComponent implements OnInit {
     this.router.navigate(['explorador','nuevo']);
 
     form.reset({
-      
+      vidas:0,
+      recompensas:0
+
     });
   }
 
