@@ -6,6 +6,7 @@ export interface Explorador{
   asignatura:string;
   vidas:number;
   recompensas:number;
+  clasificacion:number;
 
   key$?:string;
 }

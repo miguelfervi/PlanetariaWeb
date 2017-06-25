@@ -7,6 +7,7 @@ import {ExploradoresComponent} from './components/exploradores/exploradores.comp
 import {ExploradorComponent } from "./components/exploradores/explorador.component";
 import {AuthGuardService} from "./services/auth-guard.service";
 import {EmblemasComponent} from "./components/emblemas/emblemas.component";
+import {ClasificacionComponent} from "./components/clasificacion/clasificacion.component";
 
 
 const APP_ROUTES: Routes = [
@@ -16,6 +17,7 @@ const APP_ROUTES: Routes = [
   { path: 'explorador/:id', component: ExploradorComponent ,canActivate:[AuthGuardService]},
   { path: 'escaramuza', component: EscaramuzaComponent,canActivate:[AuthGuardService] },
   { path: 'emblemas', component: EmblemasComponent,canActivate:[AuthGuardService] },
+  { path: 'clasificacion', component: ClasificacionComponent,canActivate:[AuthGuardService] },
 
 
   { path: '**', pathMatch: 'full', redirectTo: '/home' }

@@ -23,6 +23,9 @@
       <li class="nav-item" routerLinkActive="active" *ngIf="authService.user | async">
         <a class="nav-link" [routerLink]="['emblemas']">Emblemas</a>
       </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="authService.user | async">
+        <a class="nav-link" [routerLink]="['clasificacion']">Clasificacion</a>
+      </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link text-right" *ngIf="authService.user | async">Bienvenido {{ (authService.user | async)?.email }}!</a>
 

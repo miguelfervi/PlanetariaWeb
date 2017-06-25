@@ -25,6 +25,9 @@ import { ExploradorComponent } from './components/exploradores/explorador.compon
 import { KeysPipe } from './pipes/keys.pipe';
 import { EmblemasComponent } from './components/emblemas/emblemas.component';
 
+import { AgmCoreModule } from '@agm/core';
+import { ClasificacionComponent } from './components/clasificacion/clasificacion.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { EmblemasComponent } from './components/emblemas/emblemas.component';
     ExploradorComponent,
     KeysPipe,
     EmblemasComponent,
+    ClasificacionComponent,
 
   ],
   imports: [
@@ -47,6 +51,9 @@ import { EmblemasComponent } from './components/emblemas/emblemas.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDDSoALZaQcRE5Hf80HA9Mk0WXRks3p7Xk'
+    }),
 
     APP_ROUTING
   ],

@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './escaramuza.component.html',
   styles: []
 })
-export class EscaramuzaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class EscaramuzaComponent {
+  title: string = 'Posición del GPS';
+  lat: number = 37.197472;
+  lng: number = -3.624563;
 }

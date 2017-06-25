@@ -20,6 +20,7 @@ export class ExploradorComponent implements OnInit {
     asignatura:"",
     vidas:0,
     recompensas:0,
+    clasificacion:0,
 
   }
 
