@@ -27,6 +27,7 @@ import { EmblemasComponent } from './components/emblemas/emblemas.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { ClasificacionComponent } from './components/clasificacion/clasificacion.component';
+import { InformacionComponent } from './components/informacion/informacion.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ClasificacionComponent } from './components/clasificacion/clasificacion
     KeysPipe,
     EmblemasComponent,
     ClasificacionComponent,
+    InformacionComponent,
 
   ],
   imports: [

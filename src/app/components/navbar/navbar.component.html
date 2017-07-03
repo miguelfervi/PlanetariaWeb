@@ -30,6 +30,10 @@
         <a class="nav-link text-right" *ngIf="authService.user | async">Bienvenido {{ (authService.user | async)?.email }}!</a>
 
       </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!(authService.user | async)">
+        <a class="nav-link" [routerLink]="['informacion']">Acerca de este proyecto</a>
+      </li>
+
 
     </ul>
 
@@ -40,7 +44,7 @@
           <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
           <input type="password" [(ngModel)]="password" placeholder="contraseña">
           <button (click)="signup()" [disabled]="!email || !password" class="btn btn-info">
-            Signup
+            Registrarse
           </button>
 
           <button (click)="login()" [disabled]="!email || !password" class="btn btn-success">

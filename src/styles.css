@@ -2,14 +2,25 @@
 .margin-container{
   margin-top: 40px;
 }
+
 .margin-button{
 
   margin-left: 40px;
 }
 
+
+.margin{
+  margin-left: 100px;
+}
 agm-map {
   height: 300px;
 }
+
+.list-group{
+    height: 200px;
+    width: 500px;
+}
+
 
 
 .animated {
