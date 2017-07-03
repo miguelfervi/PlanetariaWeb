@@ -7,7 +7,10 @@
 
   margin-left: 40px;
 }
-
+.btn-check{
+  margin-top: 10px;
+  margin-left: 30px;
+}
 
 .margin{
   margin-left: 100px;
@@ -16,7 +19,7 @@ agm-map {
   height: 300px;
 }
 
-.list-group{
+.list-group2{
     height: 200px;
     width: 500px;
 }

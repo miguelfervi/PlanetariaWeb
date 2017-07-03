@@ -1,7 +1,4 @@
-<h1 class="margin-container">{{ title }}</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<h3 class=" list-group2 margin-container text-center">{{ title }}</h3>
+<agm-map class="list-group2 margin-container" [latitude]="lat" [longitude]="lng">
+  <agm-marker class="list-group2 margin-container" [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map>

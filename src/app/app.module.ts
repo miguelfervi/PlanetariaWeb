@@ -28,6 +28,7 @@ import { EmblemasComponent } from './components/emblemas/emblemas.component';
 import { AgmCoreModule } from '@agm/core';
 import { ClasificacionComponent } from './components/clasificacion/clasificacion.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
+import { PlanetaTemasComponent } from './components/planeta/planeta-temas.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     EmblemasComponent,
     ClasificacionComponent,
     InformacionComponent,
+    PlanetaTemasComponent,
 
   ],
   imports: [
