@@ -79,25 +79,78 @@
   </div>
 
 <hr>
-  <div class="form-group row">
-    <div class="input-group col-md-8">
-      <button
-      [disabled]="!forma.valid"
-      type="submit" class="btn btn-outline-primary">
-        Guardar
-      </button>
+<h3>Notas</h3>
 
-      <button
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Tarea 1</th>
+      <th>Tarea 2</th>
+      <th>Tarea 3</th>
+      <th>Tarea 4</th>
+      <th>Tarea 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
 
-        [routerLink]="['/exploradores']"
-        class="btn btn-outline-danger margin-button">
-        Regresar
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Tarea 6</th>
+      <th>Tarea 7</th>
+      <th>Tarea 8</th>
+      <th>Tarea 9</th>
+      <th>Tarea 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
+      <td><input type="text" name="" value=""></td>
 
-      </button>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Final</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" name="" value=""></td>
+
+    </tr>
+  </tbody>
+</table>
+
+<div class="form-group row">
+  <div class="input-group col-md-8">
+    <button
+    [disabled]="!forma.valid"
+    type="submit" class="btn btn-outline-primary">
+      Guardar
+    </button>
+
+    <button
+
+      [routerLink]="['/exploradores']"
+      class="btn btn-outline-danger margin-button">
+      Regresar
+
+    </button>
 
 
-    </div>
   </div>
-
+</div>
 
 </form>
